@@ -7,14 +7,14 @@
 
 int my_is_prime(int nb)
 {
-    if (nb <= 3 && nb > 1)
-        return (1);
+    int tmp = 0;
+
     if (nb <= 1)
-        return (0);
-    for (int a = 2; a * a <= nb; a++) {
-        if (nb % a == 0)
-            return (0);
-        return (1);
-    }
-    return (0);
+        return 0;
+    for (int i = 2; i < nb; i++) {
+        tmp = nb / i;
+        if (i * tmp == nb)
+            return 0;
+    }  
+    return (1);
 }
